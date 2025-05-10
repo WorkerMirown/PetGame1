@@ -13,14 +13,17 @@ Game::Game()
     WindowHeight(1280),
     WindowWidth(780),
     TitleBarText("SokobanByDenisova"),
-    Window(new sf::RenderWindow(sf::VideoMode( static_cast<unsigned int>(WindowHeight), static_cast<unsigned int>(WindowWidth) ), TitleBarText)),
+    Window(new sf::RenderWindow(sf::VideoMode((WindowHeight), (WindowWidth) ), TitleBarText)),
     TimePerFrame(sf::seconds(1.0f / FramesPerSecond)),
     CurrentRoom(new GameInitRoom()),
     NextRoom(nullptr)
 {
 	//Nothing here
 }
-
+Game::~Game()
+{
+    delete Window;
+}
 void Game::PossiblyChangeRoom()
 {
     if (NextRoom != nullptr) {
@@ -30,14 +33,8 @@ void Game::PossiblyChangeRoom()
     }
 }
 
-Game::~Game()
-{
-    delete Window;
-}
-
 void Game::ProcessEvents()
 {
-    // Process events
     sf::Event event;
     while(Window->pollEvent(event))
     {
@@ -98,7 +95,7 @@ Room* Game::GetCurrentRoom()
 
 void Game::ChangeRoom(Room* NewRoom)
 {
-    if (NextRoom != nullptr)
+    if (NextRoom == nullptr)
     {
         NextRoom = NewRoom;
     }

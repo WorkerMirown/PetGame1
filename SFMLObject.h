@@ -9,6 +9,7 @@ public:
 
 	virtual void Step();
 	virtual void Draw();
+	void setPosition(float x, float y);
 
 	sf::Sprite* GetSprite();
 

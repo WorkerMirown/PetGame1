@@ -35,3 +35,6 @@ sf::Sprite* SFMLObject::GetSprite()
 {
 	return Sprite;
 }
+void SFMLObject::setPosition(float x, float y) {
+	Sprite->setPosition(x, y);
+}
