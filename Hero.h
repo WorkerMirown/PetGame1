@@ -4,7 +4,7 @@
 class Hero: public SFMLObject
 {
 public:
-	Hero();
+	Hero(int x, int y);
 
 private:
 

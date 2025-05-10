@@ -1,7 +1,7 @@
 #include "Wall.h"
 
-Wall::Wall()
-	:SFMLObject("Wall")
+Wall::Wall(int x, int y)
+	:SFMLObject(x, y,"Wall")
 {
 
 }

@@ -8,6 +8,6 @@ public:
 	void draw(sf::RenderWindow& window);
 private:
 	std::vector<SFMLObject> objects;
-	const int TILE_SIZE = 60; // размер клетки
+	
 };
 

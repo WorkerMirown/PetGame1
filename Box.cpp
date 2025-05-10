@@ -1,7 +1,7 @@
 #include "Box.h"
 
-Box::Box()
-	:SFMLObject("box")
+Box::Box(int x, int y)
+	:SFMLObject(x, y, "Box")
 {
 }
 

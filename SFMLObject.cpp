@@ -2,7 +2,7 @@
 #include "Game.h"
 #include "TextureManager.h"
 
-SFMLObject::SFMLObject(const std::string& resource)
+SFMLObject::SFMLObject(int x, int y, const std::string& resource)
 	: Sprite(new sf::Sprite())
 {
 	if (resource != "")
@@ -10,6 +10,7 @@ SFMLObject::SFMLObject(const std::string& resource)
 		sf::Texture* Texture =
 			TextureManager::GetInstanse()->GetTexture(resource);
 		Sprite->setTexture(*Texture);
+		Sprite->setPosition(x, y);
 	}
 }
 
@@ -35,6 +36,6 @@ sf::Sprite* SFMLObject::GetSprite()
 {
 	return Sprite;
 }
-void SFMLObject::setPosition(float x, float y) {
-	Sprite->setPosition(x, y);
-}
+//void SFMLObject::setPosition(float x, float y) {
+//	Sprite->setPosition(x, y);
+//}

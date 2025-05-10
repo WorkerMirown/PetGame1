@@ -11,32 +11,33 @@ GameLevelRoom::GameLevelRoom()
     :Room()
 {
     std::ifstream file("level.txt");
+    if (file.is_open()) {
+        while (file.eof() == false)
+        {
+            const int TILE_SIZE = 64; // размер клетки
+            std::string line;
+            int y = 0;
+            while (std::getline(file, line)) {
+                for (int x = 0; x < line.length(); ++x) {
+                    char symbol = line[x];
+                    float posX = x * TILE_SIZE;
+                    float posY = y * TILE_SIZE;
 
-    while (file.eof() == false)
-    {
-        objects.clear();
-        std::string line;
-        int y = 0;
-        while (std::getline(file, line)) {
-            for (int x = 0; x < line.length(); ++x) {
-                char symbol = line[x];
-                std::string texturePath;
-
-                switch (symbol) {
-                case '#': texturePath = "assets/wall.png"; break;
-                case ' ': texturePath = "assets/floor.png"; break;
-                case 'B': texturePath = "assets/box.png"; break;
-                case 'G': texturePath = "assets/goal.png"; break;
-                case 'P': texturePath = "assets/player.png"; break;
-                default: continue; // пропускаем неизвестные символы
+                    switch (symbol) {
+                    case '#': InstanceCreate(new Wall(posX, posY)); break;
+                    case 'B': InstanceCreate(new Box(posX, posY)); break;
+                    case 'G': InstanceCreate(new Goal(posX, posY)); break;
+                    case 'P': InstanceCreate(new Hero(posX, posY)); break;
+                    default: continue;
+                    }
                 }
-            SFMLObject obj(texturePath);
-            obj.setPosition(static_cast<float>(x * TILE_SIZE), static_cast<float>(y * TILE_SIZE));
-            objects.push_back(obj);
+                y++;
             }
-            y++;
         }
+     file.close();
     }
-    file.close();
+    else {
+        std::cerr << "Не удалось открыть файл." << std::endl; // Обработка ошибки
+    }
 
 }

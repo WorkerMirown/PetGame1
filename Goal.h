@@ -4,7 +4,7 @@
 class Goal : public SFMLObject
 {
 public:
-	Goal();
+	Goal(int x, int y);
 
 private:
 

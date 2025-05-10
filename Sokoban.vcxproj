@@ -170,6 +170,9 @@
     <Image Include="assets\LBox.png" />
     <Image Include="assets\Wall.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="level.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
