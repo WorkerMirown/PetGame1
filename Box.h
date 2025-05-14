@@ -6,7 +6,7 @@
 class Box : public SFMLObject
 {
 public:
-	Box(int x, int y);
+	Box(float x, float y);
 
 };
 

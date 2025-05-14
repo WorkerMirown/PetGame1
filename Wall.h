@@ -4,7 +4,7 @@
 class Wall : public SFMLObject
 {
 public:
-	Wall(int x, int y);
+	Wall(float x, float y);
 
 private:
 

@@ -1,6 +1,6 @@
 #include "Box.h"
 
-Box::Box(int x, int y)
+Box::Box(float x, float y)
 	:SFMLObject(x, y, "Box")
 {
 }

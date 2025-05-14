@@ -7,18 +7,23 @@
 #include "Wall.h"
 #include "GameLevelRoom.h"
 
-GameLevelRoom::GameLevelRoom()
-    :Room()
+GameLevelRoom::GameLevelRoom(const std::string& filename, int levelNumber)
+    :Room(),
+    LevelNumber(levelNumber)
 {
-    std::ifstream file("level.txt");
+    std::ifstream file(filename);
+    if (file.fail())
+    {
+        std::exception("Fail to load LevelFile");
+    }
     if (file.is_open()) {
         while (file.eof() == false)
         {
-            const int TILE_SIZE = 64; // размер клетки
+            const float TILE_SIZE = 64; // размер клетки
             std::string line;
-            int y = 0;
+            float y = 0;
             while (std::getline(file, line)) {
-                for (int x = 0; x < line.length(); ++x) {
+                for (float x = 0; x < line.length(); ++x) {
                     char symbol = line[x];
                     float posX = x * TILE_SIZE;
                     float posY = y * TILE_SIZE;
@@ -33,7 +38,7 @@ GameLevelRoom::GameLevelRoom()
                 }
                 y++;
             }
-        }
+        }file.close();
      file.close();
     }
     else {

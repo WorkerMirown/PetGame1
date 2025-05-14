@@ -24,8 +24,15 @@ void Room::Step()
 
 }
 
+bool LessThanOperator(SFMLObject* lhs, SFMLObject* rhs)
+{
+	return lhs->Depth() < rhs->Depth();
+}
+
 void Room::Draw()
 {
+	std::sort(Objects.begin(), Objects.end(), LessThanOperator);
+
 	for (SFMLObject* o : Objects)
 	{
 		o->Draw();

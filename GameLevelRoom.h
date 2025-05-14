@@ -3,11 +3,12 @@
 class GameLevelRoom: public Room
 { 
 public:
-	GameLevelRoom();
-	bool loadFromFile(const std::string& filename);
-	void draw(sf::RenderWindow& window);
+	GameLevelRoom(const std::string& filename, int levelNumber);
+
+
 private:
 	std::vector<SFMLObject> objects;
+	int LevelNumber;
 	
 };
 

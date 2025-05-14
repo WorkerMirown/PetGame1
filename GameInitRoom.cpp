@@ -14,5 +14,5 @@ GameInitRoom::GameInitRoom()
 
 void GameInitRoom::Step()
 {
-	ChangeRoom(new GameLevelRoom());
+	ChangeRoom(new GameLevelRoom("./levels/level.txt", 1));
 }

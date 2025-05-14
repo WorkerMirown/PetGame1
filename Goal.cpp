@@ -1,6 +1,6 @@
 #include "Goal.h"
 
-Goal::Goal(int x, int y)
+Goal::Goal(float x, float y)
 	:SFMLObject(x, y, "Goal")
 {
 

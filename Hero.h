@@ -4,9 +4,10 @@
 class Hero: public SFMLObject
 {
 public:
-	Hero(int x, int y);
-
-private:
+	Hero(float x, float y);
+	
+	virtual void Step() override;
+	virtual void OnAlarm(int alarm) override;
 
 };
 
