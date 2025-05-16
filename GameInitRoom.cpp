@@ -9,6 +9,7 @@ GameInitRoom::GameInitRoom()
 	TextureManager::GetInstanse()->AddTexture("Box", "assets/Box.png");
 	TextureManager::GetInstanse()->AddTexture("Wall", "assets/Wall.png");
 	TextureManager::GetInstanse()->AddTexture("FloarBlack", "assets/FloarBlack.png");
+	TextureManager::GetInstanse()->AddTexture("Tileset", "assets/Tileset.png");
 	
 }
 

@@ -3,7 +3,8 @@
 class SFMLObject
 {
 public:
-	SFMLObject(float x, float y, const std::string& resource= ""/*, int horizontalFrames, int verticalFrames*/);
+	SFMLObject(float x, float y, const std::string& resource= "", 
+		int horizontalFrames =1, int verticalFrames=1);
 
 	virtual ~SFMLObject();
 
@@ -49,6 +50,15 @@ public:
 	float Direction();
 	void SetDirection(float direction);
 
+	float ImageIndex();
+	void SetImageIndex(float value);
+
+	float ImageSpeed();
+	void SetImageSpeed(float value);
+
+	int SpriteWidth();
+	int SpriteHeight();
+
 private:
 	sf::Sprite*			Sprite;
 	sf::Vector2f		StartPosition;
@@ -57,7 +67,10 @@ private:
 	float				DepthLevel;
 	std::vector<int>	Alarms;
 	sf::Vector2f		SpeedVector;
-	/*int					HorizontalFrames;
-	int					VerticalFrames;*/
+	int					HorizontalFrames;
+	int					VerticalFrames;
+	float				Image_Index;
+	float				Image_Speed;
+	
 };
 

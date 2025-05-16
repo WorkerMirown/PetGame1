@@ -2,16 +2,19 @@
 #include "Game.h"
 #include "TextureManager.h"
 
-SFMLObject::SFMLObject(float x, float y, const std::string& resource/*, int horizontalFrames, int verticalFrames*/)
+SFMLObject::SFMLObject(float x, float y, const std::string& resource, 
+			int horizontalFrames, int verticalFrames)
 	:	Sprite(new sf::Sprite()),
 		StartPosition(x, y),
 		PreviousPosition(x, y),
 		IsVisible(true),
 		DepthLevel(0.0f),
 		Alarms(5, -1),
-		SpeedVector(0.0f, 0.0f)
-		/*HorizontalFrames(horizontalFrames),
-		VerticalFrames(verticalFrames)*/
+		SpeedVector(0.0f, 0.0f),
+		HorizontalFrames(horizontalFrames),
+		VerticalFrames(verticalFrames),
+		Image_Index(0),
+		Image_Speed(0)
 {
 	if (resource != "")
 	{
@@ -30,6 +33,10 @@ SFMLObject::~SFMLObject()
 
 void SFMLObject::Step()
 {
+	//Animateions
+	SetImageIndex(ImageIndex() + ImageSpeed());
+	
+
 	//Speed
 	Sprite->setPosition(Sprite->getPosition() + SpeedVector);
 
@@ -55,6 +62,9 @@ void SFMLObject::Draw()
 	{
 		if (IsVisible == true)
 		{
+			int x = static_cast<int>(ImageIndex()) % HorizontalFrames;
+			int y = static_cast<int>(ImageIndex()) % VerticalFrames;
+			Sprite->setTextureRect(sf::IntRect(x * SpriteWidth(), y*SpriteHeight(), SpriteWidth(), SpriteHeight()));
 			Game::GetInstance()->GetWindow()->draw(*Sprite);
 		}
 	}
@@ -208,4 +218,41 @@ void SFMLObject::SetDirection(float direction)
 	float radians = direction * 3.145926535f / 180.0f;
 	float speed = Speed();
 	SpeedVector = sf::Vector2f(speed * cos(radians), -speed * sin(radians));
+}
+
+float SFMLObject::ImageIndex()
+{
+	return Image_Index;
+}
+
+void SFMLObject::SetImageIndex(float value)
+{
+	value = fmod(value, (HorizontalFrames * VerticalFrames));
+	if (value < 0)
+	{
+		value += HorizontalFrames * VerticalFrames;
+	}
+	Image_Index = value;
+
+}
+
+float SFMLObject::ImageSpeed()
+{
+	return Image_Speed;
+}
+
+void SFMLObject::SetImageSpeed(float value)
+{
+	Image_Speed = value;
+}
+
+int SFMLObject::SpriteWidth()
+{
+	return Sprite->getTexture()->getSize().x / HorizontalFrames;
+}
+
+int SFMLObject::SpriteHeight()
+{
+	return Sprite->getTexture()->getSize().y / VerticalFrames;
+
 }

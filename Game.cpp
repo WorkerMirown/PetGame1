@@ -9,7 +9,7 @@ Game * Game::Instance = nullptr;
 
 Game::Game()
 // Create the main window
-   :FramesPerSecond(30.0f),
+   :FramesPerSecond(1.0f),
     WindowHeight(1280),
     WindowWidth(780),
     TitleBarText("SokobanByDenisova"),

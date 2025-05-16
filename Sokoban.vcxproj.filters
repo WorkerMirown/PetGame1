@@ -66,6 +66,9 @@
     <ClCompile Include="Wall.cpp">
       <Filter>Source Files\Objects</Filter>
     </ClCompile>
+    <ClCompile Include="TileSet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameInitRoom.h">
@@ -107,6 +110,9 @@
     <ClInclude Include="Room.h">
       <Filter>Header Files\Engine</Filter>
     </ClInclude>
+    <ClInclude Include="TileSet.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="assets\Box.png">
@@ -128,6 +134,9 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="assets\Wall.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\Tileset.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

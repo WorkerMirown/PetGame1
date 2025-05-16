@@ -104,13 +104,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>A:\Dev\SFML-2.6.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Dev\SFML-2.6.2\include;:\Dev\SFML-2.6.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>A:\Dev\SFML-2.6.2\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>D:\Dev\SFML-2.6.2\lib;A:\Dev\SFML-2.6.2\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-audio-d.lib;sfml-system-d.lib;sfml-network-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
     </Link>
@@ -144,6 +144,7 @@
     <ClCompile Include="Room.cpp" />
     <ClCompile Include="SFMLObject.cpp" />
     <ClCompile Include="TextureManager.cpp" />
+    <ClCompile Include="TileSet.cpp" />
     <ClCompile Include="Wall.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -159,6 +160,7 @@
     <ClInclude Include="Room.h" />
     <ClInclude Include="SFMLObject.h" />
     <ClInclude Include="TextureManager.h" />
+    <ClInclude Include="TileSet.h" />
     <ClInclude Include="Wall.h" />
   </ItemGroup>
   <ItemGroup>
@@ -168,6 +170,7 @@
     <Image Include="assets\Goal.png" />
     <Image Include="assets\Hero.png" />
     <Image Include="assets\LBox.png" />
+    <Image Include="assets\Tileset.png" />
     <Image Include="assets\Wall.png" />
   </ItemGroup>
   <ItemGroup>
