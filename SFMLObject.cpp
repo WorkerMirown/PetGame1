@@ -9,7 +9,7 @@ SFMLObject::SFMLObject(float x, float y, const std::string& resource,
 		PreviousPosition(x, y),
 		IsVisible(true),
 		DepthLevel(0.0f),
-		Alarms(5, -1),
+		Alarms(6, -1),
 		SpeedVector(0.0f, 0.0f),
 		HorizontalFrames(horizontalFrames),
 		VerticalFrames(verticalFrames),
@@ -64,7 +64,7 @@ void SFMLObject::Draw()
 		{
 			int x = static_cast<int>(ImageIndex()) % HorizontalFrames;
 			int y = static_cast<int>(ImageIndex()) % VerticalFrames;
-			Sprite->setTextureRect(sf::IntRect(x * SpriteWidth(), y*SpriteHeight(), SpriteWidth(), SpriteHeight()));
+			Sprite->setTextureRect(sf::IntRect(x * SpriteWidth(), y * SpriteHeight(), SpriteWidth(), SpriteHeight()));
 			Game::GetInstance()->GetWindow()->draw(*Sprite);
 		}
 	}
@@ -255,4 +255,17 @@ int SFMLObject::SpriteHeight()
 {
 	return Sprite->getTexture()->getSize().y / VerticalFrames;
 
+}
+
+bool SFMLObject::IsPointWithinSpriteBounds(float x, float y)
+{
+	if ((x >= Sprite->getPosition().x) &&
+		(x < Sprite ->getPosition().x+SpriteWidth()) &&
+		(y >= Sprite->getPosition().y) &&
+		(y < Sprite ->getPosition().y+SpriteHeight()) 
+	)
+	{
+		return true;
+	}
+	return false;
 }

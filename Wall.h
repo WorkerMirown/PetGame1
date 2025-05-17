@@ -1,7 +1,7 @@
 #pragma once
-#include "SFMLObject.h"
+#include "SolidObject.h"
 
-class Wall : public SFMLObject
+class Wall : public SolidObject
 {
 public:
 	Wall(float x, float y);

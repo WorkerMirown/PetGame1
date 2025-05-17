@@ -104,7 +104,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>D:\Dev\SFML-2.6.2\include;:\Dev\SFML-2.6.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Dev\SFML-2.6.2\include;A:\Dev\SFML-2.6.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -133,48 +133,78 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Box.cpp" />
+    <ClCompile Include="FloarB.cpp" />
+    <ClCompile Include="FloarL.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameInitRoom.cpp" />
     <ClCompile Include="GameLevelRoom.cpp" />
     <ClCompile Include="Goal.cpp" />
     <ClCompile Include="Hero.cpp" />
+    <ClCompile Include="LevelMenuRoom.cpp" />
+    <ClCompile Include="LVLMenuBackground.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MainMenuRoom.cpp" />
     <ClCompile Include="Mouse.cpp" />
     <ClCompile Include="MyKeyboard.cpp" />
     <ClCompile Include="Room.cpp" />
+    <ClCompile Include="SFMLButton.cpp" />
+    <ClCompile Include="SFMLFont.cpp" />
     <ClCompile Include="SFMLObject.cpp" />
+    <ClCompile Include="SolidObject.cpp" />
     <ClCompile Include="TextureManager.cpp" />
-    <ClCompile Include="TileSet.cpp" />
+    <ClCompile Include="MainMenuBackground.cpp" />
     <ClCompile Include="Wall.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Box.h" />
+    <ClInclude Include="FloarB.h" />
+    <ClInclude Include="FloarL.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameInitRoom.h" />
     <ClInclude Include="GameLevelRoom.h" />
     <ClInclude Include="Goal.h" />
+    <ClInclude Include="LevelMenuRoom.h" />
+    <ClInclude Include="LVLMenuBackground.h" />
+    <ClInclude Include="MainMenuRoom.h" />
     <ClInclude Include="Hero.h" />
     <ClInclude Include="Mouse.h" />
     <ClInclude Include="MyKeyboard.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Room.h" />
+    <ClInclude Include="SFMLButton.h" />
+    <ClInclude Include="SFMLFont.h" />
     <ClInclude Include="SFMLObject.h" />
+    <ClInclude Include="SolidObject.h" />
     <ClInclude Include="TextureManager.h" />
-    <ClInclude Include="TileSet.h" />
+    <ClInclude Include="MainMenuBackground.h" />
     <ClInclude Include="Wall.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="assets\Box.png" />
     <Image Include="assets\FloarBlack.png" />
     <Image Include="assets\FloarLight.png" />
+    <Image Include="assets\Font.png" />
     <Image Include="assets\Goal.png" />
     <Image Include="assets\Hero.png" />
+    <Image Include="assets\hero_down.png" />
+    <Image Include="assets\hero_left.png" />
+    <Image Include="assets\hero_right.png" />
+    <Image Include="assets\hero_up.png" />
     <Image Include="assets\LBox.png" />
+    <Image Include="assets\MainMenu.png" />
+    <Image Include="assets\MainMenuButton.png" />
+    <Image Include="assets\menu\ExitBUtton.png" />
+    <Image Include="assets\menu\LvlsBUtton.png" />
+    <Image Include="assets\menu\PlayBUtton.png" />
+    <Image Include="assets\menu\ScoreBUtton.png" />
+    <Image Include="assets\NumBUtton.png" />
+    <Image Include="assets\Test.png" />
     <Image Include="assets\Tileset.png" />
     <Image Include="assets\Wall.png" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="level.txt" />
+    <Text Include="levels\level1.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

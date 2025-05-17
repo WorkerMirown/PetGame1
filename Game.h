@@ -1,9 +1,9 @@
 #pragma once
-
+#include <SFML/System.hpp> 
 #include <string>
 #include <SFML/Graphics.hpp>
-#include "Room.h"
 
+class Room;
 
 class Game
 {
@@ -29,6 +29,8 @@ public:
 
 	std::string GetTitleBarText();
 	void SetTitleBarText(const std::string & text);
+
+	void QuitGame();
 
 private:
 	Game();

@@ -1,12 +1,13 @@
 #pragma once
 
-#include <SFML\Graphics.hpp>
-#include "SFMLObject.h"
+#include "SolidObject.h"
 
-class Box : public SFMLObject
+class Box : public SolidObject
 {
+public:
 public:
 	Box(float x, float y);
 
+	virtual void OnAlarm(int alarm);
 };
 

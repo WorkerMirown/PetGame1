@@ -9,9 +9,9 @@ Game * Game::Instance = nullptr;
 
 Game::Game()
 // Create the main window
-   :FramesPerSecond(1.0f),
+   :FramesPerSecond(30.0f),
     WindowHeight(1280),
-    WindowWidth(780),
+    WindowWidth(768),
     TitleBarText("SokobanByDenisova"),
     Window(new sf::RenderWindow(sf::VideoMode((WindowHeight), (WindowWidth) ), TitleBarText)),
     TimePerFrame(sf::seconds(1.0f / FramesPerSecond)),
@@ -148,5 +148,10 @@ void Game::SetTitleBarText(const std::string& text)
 {
     TitleBarText = text;
     Window->setTitle(TitleBarText);
+}
+
+void Game::QuitGame()
+{
+    exit(0);
 }
 

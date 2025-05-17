@@ -36,9 +36,6 @@
     <ClCompile Include="TextureManager.cpp">
       <Filter>Source Files\Engine</Filter>
     </ClCompile>
-    <ClCompile Include="Room.cpp">
-      <Filter>Source Files\Engine</Filter>
-    </ClCompile>
     <ClCompile Include="SFMLObject.cpp">
       <Filter>Source Files\Engine</Filter>
     </ClCompile>
@@ -66,7 +63,34 @@
     <ClCompile Include="Wall.cpp">
       <Filter>Source Files\Objects</Filter>
     </ClCompile>
-    <ClCompile Include="TileSet.cpp">
+    <ClCompile Include="FloarB.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FloarL.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MainMenuRoom.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SFMLButton.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SFMLFont.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MainMenuBackground.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Room.cpp">
+      <Filter>Source Files\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="SolidObject.cpp">
+      <Filter>Source Files\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelMenuRoom.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LVLMenuBackground.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -95,9 +119,6 @@
     <ClInclude Include="TextureManager.h">
       <Filter>Header Files\Engine</Filter>
     </ClInclude>
-    <ClInclude Include="Game.h">
-      <Filter>Header Files\Engine</Filter>
-    </ClInclude>
     <ClInclude Include="Mouse.h">
       <Filter>Header Files\Engine</Filter>
     </ClInclude>
@@ -107,11 +128,38 @@
     <ClInclude Include="SFMLObject.h">
       <Filter>Header Files\Engine</Filter>
     </ClInclude>
+    <ClInclude Include="MainMenuRoom.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SFMLButton.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SFMLFont.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MainMenuBackground.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="Room.h">
       <Filter>Header Files\Engine</Filter>
     </ClInclude>
-    <ClInclude Include="TileSet.h">
-      <Filter>Resource Files</Filter>
+    <ClInclude Include="Game.h">
+      <Filter>Header Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="SolidObject.h">
+      <Filter>Header Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelMenuRoom.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FloarB.h">
+      <Filter>Header Files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="FloarL.h">
+      <Filter>Header Files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="LVLMenuBackground.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -139,9 +187,51 @@
     <Image Include="assets\Tileset.png">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="assets\Font.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\MainMenu.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\MainMenuButton.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\menu\ExitBUtton.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\menu\LvlsBUtton.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\menu\PlayBUtton.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\menu\ScoreBUtton.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\Test.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\hero_down.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\hero_left.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\hero_right.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\hero_up.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\NumBUtton.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Text Include="level.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="levels\level1.txt">
       <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>

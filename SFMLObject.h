@@ -1,10 +1,17 @@
 #pragma once
+
 #include <SFML/Graphics.hpp>
+#include "Game.h"
+
+
+
+class Game;
+
 class SFMLObject
 {
 public:
 	SFMLObject(float x, float y, const std::string& resource= "", 
-		int horizontalFrames =1, int verticalFrames=1);
+		int horizontalFrames = 1, int verticalFrames = 1);
 
 	virtual ~SFMLObject();
 
@@ -59,6 +66,14 @@ public:
 	int SpriteWidth();
 	int SpriteHeight();
 
+	bool IsPointWithinSpriteBounds(float x, float y);
+
+	template <typename T>
+	std::vector<T> GetAllGameObjectAtPosition(float x, float y);
+	
+	//template <typename T>
+	//std::vector<T> GetAllGameObjectOfType();
+
 private:
 	sf::Sprite*			Sprite;
 	sf::Vector2f		StartPosition;
@@ -73,4 +88,14 @@ private:
 	float				Image_Speed;
 	
 };
+template<typename T>
+inline std::vector<T> SFMLObject::GetAllGameObjectAtPosition(float x, float y)
+{
+	return Game::GetInstance()->GetCurrentRoom()->GetAllGameObjectAtPosition<T>(x,y);
+}
 
+//template<typename T>
+//inline std::vector<T> SFMLObject::GetAllGameObjectOfType()
+//{
+//	return Game::GetInstance()->GetCurrentRoom()->GetAllGameObjectOfType<T>();
+//}

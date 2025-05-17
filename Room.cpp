@@ -17,9 +17,9 @@ Room::~Room()
 
 void Room::Step()
 {
-	for (SFMLObject* o : Objects)
+	for (int i = 0; i < Objects.size(); i++)
 	{
-		o->Step();
+		Objects[i]->Step();
 	}
 
 }
