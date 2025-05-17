@@ -28,6 +28,7 @@ LevelMenuRoom::LevelMenuRoom()
 	:Room()
 {
 	InstanceCreate(new LVLMenuBackground(0, 0));
+
 	InstanceCreate(new SFMLButton(420, 128, "NumBUtton", PlayLevel001));
 	InstanceCreate(new SFMLButton(570, 128, "NumBUtton", PlayLevel002));
 	InstanceCreate(new SFMLButton(700, 128, "NumBUtton", PlayLevel003));
