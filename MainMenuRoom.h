@@ -7,5 +7,6 @@ class MainMenuRoom: public Room
 {
 public:
 	MainMenuRoom();
+
 };
 

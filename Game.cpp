@@ -9,12 +9,12 @@ Game * Game::Instance = nullptr;
 
 Game::Game()
 // Create the main window
-   :FramesPerSecond(30.0f),
+   :FramesPerSecond(60.f),
     WindowHeight(1280),
     WindowWidth(768),
     TitleBarText("SokobanByDenisova"),
     Window(new sf::RenderWindow(sf::VideoMode((WindowHeight), (WindowWidth) ), TitleBarText)),
-    TimePerFrame(sf::seconds(1.0f / FramesPerSecond)),
+    TimePerFrame(sf::seconds(2.0f / FramesPerSecond)),
     CurrentRoom(new GameInitRoom()),
     NextRoom(nullptr)
 {

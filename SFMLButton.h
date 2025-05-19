@@ -1,4 +1,5 @@
 #pragma once
+#include "SFMLFont.h"
 #include "SFMLObject.h"
 
 class SFMLButton : public SFMLObject
@@ -11,8 +12,8 @@ public:
 		void(*callback)()
 	);
 
-	virtual void Step() override;
 
+	virtual void Step() override;
 
 private:
 	void (*Callback)();

@@ -5,10 +5,8 @@
 
 GameInitRoom::GameInitRoom()
 {
-	//Font
-	TextureManager::GetInstanse()->AddTexture("font", "Font1.png");
 	
-	//MainMenu
+	//Menu
 	TextureManager::GetInstanse()->AddTexture("main_menu_background", "assets/menu/GameMenu.png");
 	TextureManager::GetInstanse()->AddTexture("ExitBUtton", "assets/menu/ExitBUtton.png");
 	TextureManager::GetInstanse()->AddTexture("LvlsBUtton", "assets/menu/LvlsBUtton.png");
@@ -16,6 +14,8 @@ GameInitRoom::GameInitRoom()
 	TextureManager::GetInstanse()->AddTexture("ScoreBUtton", "assets/menu/ScoreBUtton.png");
 	TextureManager::GetInstanse()->AddTexture("NumBUtton", "assets/menu/NumBUtton.png");
 	TextureManager::GetInstanse()->AddTexture("LVLMenu", "assets/menu/LVLMenu.png");
+	//Font
+	TextureManager::GetInstanse()->AddTexture("font", "assets/font/2.png");
 
 
 	//TextureOfObject

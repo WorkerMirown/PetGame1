@@ -47,7 +47,7 @@ GameLevelRoom::GameLevelRoom(const std::string& filename, int levelNumber)
                         InstanceCreate(new Box(posX, posY));break;
                     case 'G': InstanceCreate(new Goal(posX, posY)); break;
                     case 'P':  InstanceCreate(new FloarL(posX, posY));
-                    InstanceCreate(new Hero(posX, posY)); break;
+                    InstanceCreate(new Hero(posX, posY, levelNumber)); break;
                     case '1': InstanceCreate(new FloarL(posX, posY)); break;
                     case '2': InstanceCreate(new FloarB(posX, posY)); break;
                     default: continue;

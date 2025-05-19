@@ -1,9 +1,13 @@
 #include "Game.h"
 #include "Room.h"
+#include "Box.h"
+#include "Goal.h"
+#include "MainMenuRoom.h"
 
 Room::Room()
 	:Objects()
 {
+	levelCompleted = false;
 }
 
 Room::~Room()
@@ -48,3 +52,15 @@ void Room::ChangeRoom(Room* NextRoom)
 {
 	Game::GetInstance()->ChangeRoom(NextRoom);
 }
+
+
+
+//bool Room::IsLevelCompleted() 
+//{
+//	return levelCompleted;
+//}
+//
+//void Room::SetLevelCompleted(bool status)
+//{
+//	levelCompleted = status;
+//}

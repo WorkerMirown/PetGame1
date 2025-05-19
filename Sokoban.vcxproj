@@ -133,6 +133,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Box.cpp" />
+    <ClCompile Include="SFMLFadeIn.cpp" />
     <ClCompile Include="FloarB.cpp" />
     <ClCompile Include="FloarL.cpp" />
     <ClCompile Include="Game.cpp" />
@@ -147,6 +148,7 @@
     <ClCompile Include="Mouse.cpp" />
     <ClCompile Include="MyKeyboard.cpp" />
     <ClCompile Include="Room.cpp" />
+    <ClCompile Include="ScoreManager.cpp" />
     <ClCompile Include="SFMLButton.cpp" />
     <ClCompile Include="SFMLFont.cpp" />
     <ClCompile Include="SFMLObject.cpp" />
@@ -157,6 +159,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Box.h" />
+    <ClInclude Include="SFMLFadeIn.h" />
     <ClInclude Include="FloarB.h" />
     <ClInclude Include="FloarL.h" />
     <ClInclude Include="Game.h" />
@@ -171,6 +174,7 @@
     <ClInclude Include="MyKeyboard.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Room.h" />
+    <ClInclude Include="ScoreManager.h" />
     <ClInclude Include="SFMLButton.h" />
     <ClInclude Include="SFMLFont.h" />
     <ClInclude Include="SFMLObject.h" />
@@ -184,6 +188,9 @@
     <Image Include="assets\FloarBlack.png" />
     <Image Include="assets\FloarLight.png" />
     <Image Include="assets\Font.png" />
+    <Image Include="assets\font\Anno_16x16.png" />
+    <Image Include="assets\font\Flying_Mage_square_16x16.png" />
+    <Image Include="assets\font\Font.png" />
     <Image Include="assets\Goal.png" />
     <Image Include="assets\Hero.png" />
     <Image Include="assets\hero_down.png" />

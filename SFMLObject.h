@@ -3,12 +3,12 @@
 #include <SFML/Graphics.hpp>
 #include "Game.h"
 
-
-
 class Game;
 
 class SFMLObject
 {
+	friend class SFMLFont;
+
 public:
 	SFMLObject(float x, float y, const std::string& resource= "", 
 		int horizontalFrames = 1, int verticalFrames = 1);
@@ -54,9 +54,17 @@ public:
 
 	float Speed();
 	void SetSpeed(float speed);
-	float Direction();
-	void SetDirection(float direction);
 
+	enum Direction
+	{
+		Left,
+		Right,
+		Up,
+		Down
+	};
+
+	void SetDirection(Direction direction);
+	
 	float ImageIndex();
 	void SetImageIndex(float value);
 
@@ -66,13 +74,17 @@ public:
 	int SpriteWidth();
 	int SpriteHeight();
 
+
+
+
 	bool IsPointWithinSpriteBounds(float x, float y);
 
 	template <typename T>
 	std::vector<T> GetAllGameObjectAtPosition(float x, float y);
 	
-	//template <typename T>
-	//std::vector<T> GetAllGameObjectOfType();
+	template <typename T>
+	std::vector<T> GetAllGameObjectOfType();
+
 
 private:
 	sf::Sprite*			Sprite;
@@ -88,14 +100,14 @@ private:
 	float				Image_Speed;
 	
 };
+
 template<typename T>
 inline std::vector<T> SFMLObject::GetAllGameObjectAtPosition(float x, float y)
 {
 	return Game::GetInstance()->GetCurrentRoom()->GetAllGameObjectAtPosition<T>(x,y);
 }
-
-//template<typename T>
-//inline std::vector<T> SFMLObject::GetAllGameObjectOfType()
-//{
-//	return Game::GetInstance()->GetCurrentRoom()->GetAllGameObjectOfType<T>();
-//}
+template<typename T>
+inline std::vector<T> SFMLObject::GetAllGameObjectOfType()
+{
+	return Game::GetInstance()->GetCurrentRoom()->template GetAllGameObjectOfType<T>();
+}

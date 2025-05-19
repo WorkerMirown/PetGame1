@@ -6,20 +6,28 @@
 #include "MyKeyboard.h"
 #include "TextureManager.h"
 #include "SolidObject.h"
+#include "ScoreManager.h"
 
 
 
-Hero::Hero(float x, float y)
-	:SFMLObject(x, y, "hero_down", 2, 1)
+
+Hero::Hero(float x, float y, int levelNumber)
+	:SFMLObject(x, y, "hero_down", 2, 1),
+	Steps(0),
+	Font (new SFMLFont()),
+	LevelNumber(levelNumber)
+
 {
 	SetDepth(3);
 
 }
 
-//Hero:~()
-//{
-//
-//}
+Hero::~Hero()
+{
+	delete Font;
+}
+
+
 
 void Hero::Step()
 {
@@ -34,7 +42,7 @@ void Hero::Step()
 		if (solids.empty() == true)
 		{
 			SetImageSpeed(0.175f);
-			SetDirection(0);
+			SetDirection(Right);
 			SetSpeed(8.0f);
 			SetAlarm(0, 8);
 			GetSprite()->setTexture(*TextureManager::GetInstanse()->GetTexture("hero_right"));
@@ -49,11 +57,11 @@ void Hero::Step()
 			{
 				
 				boxes[0]->SetSpeed(8);
-				boxes[0]->SetDirection(0);
+				boxes[0]->SetDirection(Right);
 				boxes[0]->SetAlarm(0, 8);
 				SetImageSpeed(0.175f);
 				SetSpeed(4.0f);
-				SetDirection(0);
+				SetDirection(Right);
 				SetAlarm(0, 16);
 				GetSprite()->setTexture(*TextureManager::GetInstanse()->GetTexture("hero_right"));
 			}
@@ -68,7 +76,7 @@ void Hero::Step()
 		{
 			SetImageSpeed(0.175f);
 			SetSpeed(8.0f);
-			SetDirection(180);
+			SetDirection(Left);
 			SetAlarm(0, 8);
 			GetSprite()->setTexture(*TextureManager::GetInstanse()->GetTexture("hero_left"));
 		}
@@ -83,10 +91,10 @@ void Hero::Step()
 				
 				SetImageSpeed(0.175f);
 				SetSpeed(2.0f);
-				SetDirection(180);
+				SetDirection(Left);
 				SetAlarm(0, 32);
 				boxes[0]->SetSpeed(8);
-				boxes[0]->SetDirection(180);
+				boxes[0]->SetDirection(Left);
 				boxes[0]->SetAlarm(0, 8);
 				
 				
@@ -95,7 +103,6 @@ void Hero::Step()
 		}
 		}
 	}	
-
 	if (MyKeyboard::GetInstance()->IsKeyDown(sf::Keyboard::Up) && (Alarm(0) < 0))
 	{
 		std::vector<SolidObject*> solids = GetAllGameObjectAtPosition<SolidObject*>(X() , Y() - SpriteHeight());
@@ -103,7 +110,7 @@ void Hero::Step()
 		{
 			SetImageSpeed(0.175f);
 			SetSpeed(8.0f);
-			SetDirection(90);
+			SetDirection(Up);
 			SetAlarm(0, 8);
 			GetSprite()->setTexture(*TextureManager::GetInstanse()->GetTexture("hero_up"));
 		}
@@ -118,11 +125,11 @@ void Hero::Step()
 
 					SetImageSpeed(0.175f);
 					SetSpeed(2.0f);
-					SetDirection(90);
+					SetDirection(Up);
 					SetAlarm(0, 32);
 					boxes[0]->SetImageSpeed(0.175f);
 					boxes[0]->SetSpeed(8);
-					boxes[0]->SetDirection(90);
+					boxes[0]->SetDirection(Up);
 					boxes[0]->SetAlarm(0, 8);
 					float xpos = X();
 					float ypos = Y();
@@ -139,7 +146,7 @@ void Hero::Step()
 		{
 			SetImageSpeed(0.175f);
 			SetSpeed(8.0f);
-			SetDirection(270);
+			SetDirection(Down);
 			SetAlarm(0, 8);
 			GetSprite()->setTexture(*TextureManager::GetInstanse()->GetTexture("hero_down"));
 		}
@@ -154,10 +161,10 @@ void Hero::Step()
 
 					SetImageSpeed(0.175f);
 					SetSpeed(2.0f);
-					SetDirection(270);
+					SetDirection(Down);
 					SetAlarm(0, 32);
 					boxes[0]->SetSpeed(8);
-					boxes[0]->SetDirection(270);
+					boxes[0]->SetDirection(Down);
 					boxes[0]->SetAlarm(0, 8);
 					float xpos = X();
 					float ypos = Y();
@@ -167,11 +174,7 @@ void Hero::Step()
 			}
 		}
 	}
-
-
-
 	
-
 }
 
 void Hero::OnAlarm(int alarm)
@@ -180,21 +183,28 @@ void Hero::OnAlarm(int alarm)
 	SetSpeed(0.0f);
 	Steps++;
 
-	/*bool victory = true;
-    std::vector<Goal*> goals = GetAllGameObjectOfType<Goal*>();
+	bool victory = true;
+		std::vector<Goal*> goals = GetAllGameObjectOfType<Goal*>();
 
-	for (Goal* g : goals)
-	{
-		std::vector<Box*> boxes = GetAllGameObjectAtPosition<Box*>(g->X(), g->Y());
-		if (boxes.size() != 1)
+		for (Goal* g : goals)
 		{
-			victory = false;
-			break;
+			std::vector<Box*> boxes = GetAllGameObjectAtPosition<Box*>(g->X(), g->Y());
+			if (boxes.size() != 1)
+			{
+				victory = false;
+				break;
+			}
 		}
-	}
-	if (victory == true)
-	{
-		int f = 0;
-	}*/
-	
+		if (victory == true)
+		{
+			ScoreManager::GetInstance()->SaveScore(LevelNumber, Steps);
+			Game::GetInstance()->GetCurrentRoom()->ChangeRoom(new MainMenuRoom());
+		}	
+}
+
+void Hero::Draw()
+{
+	Font->Print(5, 5, "STEPS " + std::to_string(Steps), sf::Color::Color(224, 194, 131), 1, 1);
+	//224, 194, 131
+	SFMLObject::Draw();
 }

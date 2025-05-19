@@ -67,6 +67,7 @@ void SFMLObject::Draw()
 			Sprite->setTextureRect(sf::IntRect(x * SpriteWidth(), y * SpriteHeight(), SpriteWidth(), SpriteHeight()));
 			Game::GetInstance()->GetWindow()->draw(*Sprite);
 		}
+
 	}
 }
 
@@ -208,16 +209,24 @@ void SFMLObject::SetSpeed(float NewSpeed)
 	}
 }
 
-float SFMLObject::Direction()
-{
-	return 180.0f * atan2(-SpeedVector.y, SpeedVector.x)/3.1415926535f;
-}
 
-void SFMLObject::SetDirection(float direction)
+void SFMLObject::SetDirection(Direction direction)
 {
-	float radians = direction * 3.145926535f / 180.0f;
-	float speed = Speed();
-	SpeedVector = sf::Vector2f(speed * cos(radians), -speed * sin(radians));
+	switch (direction)
+	{
+	case Left:
+	{
+		SpeedVector = sf::Vector2f(-Speed(), 0); break;
+	}
+	case Right:
+		SpeedVector = sf::Vector2f(Speed(), 0); break;
+	case Up:
+		SpeedVector = sf::Vector2f(0, -Speed()); break;
+	case Down:
+		SpeedVector = sf::Vector2f(0, Speed()); break;
+	default:
+		break;
+	}
 }
 
 float SFMLObject::ImageIndex()
@@ -227,7 +236,7 @@ float SFMLObject::ImageIndex()
 
 void SFMLObject::SetImageIndex(float value)
 {
-	value = fmod(value, (HorizontalFrames * VerticalFrames));
+	value = fmodf(value, (HorizontalFrames * VerticalFrames));
 	if (value < 0)
 	{
 		value += HorizontalFrames * VerticalFrames;

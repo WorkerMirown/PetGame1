@@ -30,6 +30,8 @@ public:
 	std::string GetTitleBarText();
 	void SetTitleBarText(const std::string & text);
 
+
+
 	void QuitGame();
 
 private:

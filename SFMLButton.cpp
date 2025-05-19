@@ -1,4 +1,5 @@
 #include "SFMLButton.h"
+#include "SFMLFont.h"
 #include "Mouse.h"
 
 SFMLButton::SFMLButton(	float x,
@@ -28,5 +29,4 @@ void SFMLButton::Step()
 		}
 	}
 }
-
 

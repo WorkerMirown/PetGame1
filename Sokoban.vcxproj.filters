@@ -25,12 +25,27 @@
     <Filter Include="Header Files\Engine">
       <UniqueIdentifier>{53786835-0044-4d8f-8018-97ce33b4e8e5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\Отрисовка объектов">
+      <UniqueIdentifier>{7b90aa56-a9ff-4b3b-83ac-774c4e43b49d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Менюинг">
+      <UniqueIdentifier>{c972549a-4121-41ed-bc5f-f8e04b81c6ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Шрифт">
+      <UniqueIdentifier>{6abbd4c1-3dd8-4717-9ee2-d6ebe38350fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Уровни">
+      <UniqueIdentifier>{cd1470da-5f18-4372-8e66-acb0ba2ece33}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Менюинг">
+      <UniqueIdentifier>{f8c59ca6-6096-4681-8f79-bbbd7a2979d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Менюинг">
+      <UniqueIdentifier>{89f7f771-6b27-44d2-b1c8-db85dbaca646}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="GameInitRoom.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="TextureManager.cpp">
@@ -48,9 +63,6 @@
     <ClCompile Include="Game.cpp">
       <Filter>Source Files\Engine</Filter>
     </ClCompile>
-    <ClCompile Include="GameLevelRoom.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Goal.cpp">
       <Filter>Source Files\Objects</Filter>
     </ClCompile>
@@ -63,34 +75,46 @@
     <ClCompile Include="Wall.cpp">
       <Filter>Source Files\Objects</Filter>
     </ClCompile>
-    <ClCompile Include="FloarB.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="FloarL.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MainMenuRoom.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SFMLButton.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SFMLFont.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MainMenuBackground.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Room.cpp">
       <Filter>Source Files\Engine</Filter>
     </ClCompile>
     <ClCompile Include="SolidObject.cpp">
       <Filter>Source Files\Engine</Filter>
     </ClCompile>
+    <ClCompile Include="FloarL.cpp">
+      <Filter>Source Files\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="FloarB.cpp">
+      <Filter>Source Files\Objects</Filter>
+    </ClCompile>
     <ClCompile Include="LevelMenuRoom.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Менюинг</Filter>
     </ClCompile>
     <ClCompile Include="LVLMenuBackground.cpp">
+      <Filter>Source Files\Менюинг</Filter>
+    </ClCompile>
+    <ClCompile Include="MainMenuBackground.cpp">
+      <Filter>Source Files\Менюинг</Filter>
+    </ClCompile>
+    <ClCompile Include="MainMenuRoom.cpp">
+      <Filter>Source Files\Менюинг</Filter>
+    </ClCompile>
+    <ClCompile Include="GameInitRoom.cpp">
+      <Filter>Source Files\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="SFMLButton.cpp">
+      <Filter>Source Files\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="SFMLFont.cpp">
+      <Filter>Source Files\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="GameLevelRoom.cpp">
+      <Filter>Source Files\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="ScoreManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SFMLFadeIn.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -128,18 +152,6 @@
     <ClInclude Include="SFMLObject.h">
       <Filter>Header Files\Engine</Filter>
     </ClInclude>
-    <ClInclude Include="MainMenuRoom.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SFMLButton.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SFMLFont.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MainMenuBackground.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Room.h">
       <Filter>Header Files\Engine</Filter>
     </ClInclude>
@@ -149,90 +161,117 @@
     <ClInclude Include="SolidObject.h">
       <Filter>Header Files\Engine</Filter>
     </ClInclude>
-    <ClInclude Include="LevelMenuRoom.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="FloarB.h">
       <Filter>Header Files\Objects</Filter>
     </ClInclude>
     <ClInclude Include="FloarL.h">
       <Filter>Header Files\Objects</Filter>
     </ClInclude>
+    <ClInclude Include="LevelMenuRoom.h">
+      <Filter>Header Files\Менюинг</Filter>
+    </ClInclude>
     <ClInclude Include="LVLMenuBackground.h">
+      <Filter>Header Files\Менюинг</Filter>
+    </ClInclude>
+    <ClInclude Include="MainMenuBackground.h">
+      <Filter>Header Files\Менюинг</Filter>
+    </ClInclude>
+    <ClInclude Include="MainMenuRoom.h">
+      <Filter>Header Files\Менюинг</Filter>
+    </ClInclude>
+    <ClInclude Include="SFMLButton.h">
+      <Filter>Header Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="SFMLFont.h">
+      <Filter>Header Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="ScoreManager.h">
+      <Filter>Header Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="SFMLFadeIn.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="assets\Box.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="assets\FloarBlack.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="assets\FloarLight.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="assets\Goal.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="assets\Hero.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="assets\LBox.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="assets\Wall.png">
-      <Filter>Resource Files</Filter>
-    </Image>
     <Image Include="assets\Tileset.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="assets\Font.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="assets\MainMenu.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="assets\MainMenuButton.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="assets\menu\ExitBUtton.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="assets\menu\LvlsBUtton.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="assets\menu\PlayBUtton.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="assets\menu\ScoreBUtton.png">
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="assets\Test.png">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="assets\Font.png">
+      <Filter>Resource Files\Шрифт</Filter>
+    </Image>
+    <Image Include="assets\Box.png">
+      <Filter>Resource Files\Отрисовка объектов</Filter>
+    </Image>
+    <Image Include="assets\menu\ExitBUtton.png">
+      <Filter>Resource Files\Менюинг</Filter>
+    </Image>
+    <Image Include="assets\FloarBlack.png">
+      <Filter>Resource Files\Отрисовка объектов</Filter>
+    </Image>
+    <Image Include="assets\FloarLight.png">
+      <Filter>Resource Files\Отрисовка объектов</Filter>
+    </Image>
+    <Image Include="assets\Goal.png">
+      <Filter>Resource Files\Отрисовка объектов</Filter>
+    </Image>
+    <Image Include="assets\Hero.png">
+      <Filter>Resource Files\Отрисовка объектов</Filter>
+    </Image>
     <Image Include="assets\hero_down.png">
-      <Filter>Resource Files</Filter>
+      <Filter>Resource Files\Отрисовка объектов</Filter>
     </Image>
     <Image Include="assets\hero_left.png">
-      <Filter>Resource Files</Filter>
+      <Filter>Resource Files\Отрисовка объектов</Filter>
     </Image>
     <Image Include="assets\hero_right.png">
-      <Filter>Resource Files</Filter>
+      <Filter>Resource Files\Отрисовка объектов</Filter>
     </Image>
     <Image Include="assets\hero_up.png">
-      <Filter>Resource Files</Filter>
+      <Filter>Resource Files\Отрисовка объектов</Filter>
+    </Image>
+    <Image Include="assets\LBox.png">
+      <Filter>Resource Files\Отрисовка объектов</Filter>
+    </Image>
+    <Image Include="assets\menu\LvlsBUtton.png">
+      <Filter>Resource Files\Менюинг</Filter>
+    </Image>
+    <Image Include="assets\MainMenu.png">
+      <Filter>Resource Files\Менюинг</Filter>
+    </Image>
+    <Image Include="assets\MainMenuButton.png">
+      <Filter>Resource Files\Менюинг</Filter>
     </Image>
     <Image Include="assets\NumBUtton.png">
-      <Filter>Resource Files</Filter>
+      <Filter>Resource Files\Менюинг</Filter>
+    </Image>
+    <Image Include="assets\menu\PlayBUtton.png">
+      <Filter>Resource Files\Менюинг</Filter>
+    </Image>
+    <Image Include="assets\menu\ScoreBUtton.png">
+      <Filter>Resource Files\Менюинг</Filter>
+    </Image>
+    <Image Include="assets\Wall.png">
+      <Filter>Resource Files\Отрисовка объектов</Filter>
+    </Image>
+    <Image Include="assets\font\Flying_Mage_square_16x16.png">
+      <Filter>Resource Files\Шрифт</Filter>
+    </Image>
+    <Image Include="assets\font\Font.png">
+      <Filter>Resource Files\Шрифт</Filter>
+    </Image>
+    <Image Include="assets\font\Anno_16x16.png">
+      <Filter>Resource Files\Шрифт</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>
     <Text Include="level.txt">
-      <Filter>Resource Files</Filter>
+      <Filter>Resource Files\Уровни</Filter>
     </Text>
     <Text Include="levels\level1.txt">
-      <Filter>Resource Files</Filter>
+      <Filter>Resource Files\Уровни</Filter>
     </Text>
   </ItemGroup>
 </Project>
