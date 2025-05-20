@@ -117,6 +117,15 @@
     <ClCompile Include="SFMLFadeIn.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FadeOutAndChangeRoom.cpp">
+      <Filter>Source Files\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="ScoreMenu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelScoreMenu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameInitRoom.h">
@@ -189,6 +198,15 @@
       <Filter>Header Files\Engine</Filter>
     </ClInclude>
     <ClInclude Include="SFMLFadeIn.h">
+      <Filter>Header Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="FadeOutAndChangeRoom.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ScoreMenu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelScoreMenu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

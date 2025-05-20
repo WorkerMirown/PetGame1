@@ -5,6 +5,8 @@
 #include "GameLevelRoom.h"
 #include "MyKeyboard.h"
 #include "LevelMenuRoom.h"
+#include "ScoreMenu.h"
+
 
 void QuitGame()
 {
@@ -13,6 +15,10 @@ void QuitGame()
 void LevelMenu()
 {
 	Game::GetInstance()->GetCurrentRoom()->ChangeRoom(new LevelMenuRoom);
+}
+void OpenScoreMenu()
+{
+	Game::GetInstance()->GetCurrentRoom()->ChangeRoom(new ScoreMenu);
 }
 
 
@@ -25,5 +31,6 @@ MainMenuRoom::MainMenuRoom()
 	InstanceCreate(new SFMLButton(720,512, "ExitBUtton", QuitGame)); // QUIT_Game
 	InstanceCreate(new SFMLButton(640, 320, "LvlsBUtton", LevelMenu)); // 
 //	InstanceCreate(new SFMLButton(640, 128, "PlayBUtton", ));
-	//InstanceCreate(new SFMLButton(960, 192, "ScoreBUtton", PlayLevel003)); 
+	InstanceCreate(new SFMLButton(960, 192, "ScoreBUtton", OpenScoreMenu));
+
 }

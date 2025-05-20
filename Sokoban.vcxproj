@@ -133,6 +133,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Box.cpp" />
+    <ClCompile Include="FadeOutAndChangeRoom.cpp" />
+    <ClCompile Include="LevelScoreMenu.cpp" />
+    <ClCompile Include="ScoreMenu.cpp" />
     <ClCompile Include="SFMLFadeIn.cpp" />
     <ClCompile Include="FloarB.cpp" />
     <ClCompile Include="FloarL.cpp" />
@@ -159,6 +162,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Box.h" />
+    <ClInclude Include="FadeOutAndChangeRoom.h" />
+    <ClInclude Include="LevelScoreMenu.h" />
+    <ClInclude Include="ScoreMenu.h" />
     <ClInclude Include="SFMLFadeIn.h" />
     <ClInclude Include="FloarB.h" />
     <ClInclude Include="FloarL.h" />

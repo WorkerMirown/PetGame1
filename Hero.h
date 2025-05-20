@@ -15,5 +15,7 @@ private:
 	int Steps;
 	SFMLFont* Font;
 	int LevelNumber;
+	bool victory;
+	bool WonGame;
 };
 

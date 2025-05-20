@@ -12,10 +12,12 @@
 #include "GameLevelRoom.h"
 #include "Game.h"
 #include "MainMenuRoom.h"
+#include "FadeOutAndChangeRoom.h"
+#include "SFMLFadeIn.h"
 
-void ReturnToMainMenu()
+inline void ReturnToMainMenu()
 {
-    Game::GetInstance()->ChangeRoom(new MainMenuRoom);
+    Game::GetInstance()->GetCurrentRoom()->InstanceCreate(new FadeOutAndChangeRoom(new MainMenuRoom));
 }
 
 GameLevelRoom::GameLevelRoom(const std::string& filename, int levelNumber)
@@ -59,6 +61,8 @@ GameLevelRoom::GameLevelRoom(const std::string& filename, int levelNumber)
         /*SFMLButton* button = new SFMLButton(0.0, 645,"ExitBUtton", ReturnToMainMenu);
         button->SetDepth(6);
         InstanceCreate(button);*/
+
+        InstanceCreate(new SFMLFadeIn());
      file.close();
     }
     else {

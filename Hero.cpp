@@ -7,15 +7,16 @@
 #include "TextureManager.h"
 #include "SolidObject.h"
 #include "ScoreManager.h"
-
-
+#include "LevelMenuRoom.h"
+#include "FadeOutAndChangeRoom.h"
 
 
 Hero::Hero(float x, float y, int levelNumber)
 	:SFMLObject(x, y, "hero_down", 2, 1),
 	Steps(0),
-	Font (new SFMLFont()),
-	LevelNumber(levelNumber)
+	Font(new SFMLFont()),
+	LevelNumber(levelNumber),
+	WonGame(false)
 
 {
 	SetDepth(3);
@@ -32,6 +33,10 @@ Hero::~Hero()
 void Hero::Step()
 {
 	SFMLObject::Step();
+	if (WonGame == true)
+	{
+		return;
+	}
 	if (MyKeyboard::GetInstance()->IsKeyDown(sf::Keyboard::Escape))
 	{
 		Game::GetInstance()->GetCurrentRoom()->ChangeRoom(new MainMenuRoom());
@@ -90,9 +95,9 @@ void Hero::Step()
 			{
 				
 				SetImageSpeed(0.175f);
-				SetSpeed(2.0f);
+				SetSpeed(8.0f);
 				SetDirection(Left);
-				SetAlarm(0, 32);
+				SetAlarm(0, 8);
 				boxes[0]->SetSpeed(8);
 				boxes[0]->SetDirection(Left);
 				boxes[0]->SetAlarm(0, 8);
@@ -160,9 +165,9 @@ void Hero::Step()
 				{
 
 					SetImageSpeed(0.175f);
-					SetSpeed(2.0f);
+					SetSpeed(8.0f);
 					SetDirection(Down);
-					SetAlarm(0, 32);
+					SetAlarm(0, 8);
 					boxes[0]->SetSpeed(8);
 					boxes[0]->SetDirection(Down);
 					boxes[0]->SetAlarm(0, 8);
@@ -179,11 +184,13 @@ void Hero::Step()
 
 void Hero::OnAlarm(int alarm)
 {
-	SetImageSpeed(0.0f);
-	SetSpeed(0.0f);
-	Steps++;
+	if (alarm == 0)
+	{
+		SetImageSpeed(0.0f);
+		SetSpeed(0.0f);
+		Steps++;
 
-	bool victory = true;
+		bool victory = true;
 		std::vector<Goal*> goals = GetAllGameObjectOfType<Goal*>();
 
 		for (Goal* g : goals)
@@ -195,16 +202,28 @@ void Hero::OnAlarm(int alarm)
 				break;
 			}
 		}
-		if (victory == true)
+		WonGame |= victory;
+		if (victory == true && Alarm(1) < 0)
 		{
+			SetAlarm(1, 120);
 			ScoreManager::GetInstance()->SaveScore(LevelNumber, Steps);
-			Game::GetInstance()->GetCurrentRoom()->ChangeRoom(new MainMenuRoom());
-		}	
+
+			//Game::GetInstance()->GetCurrentRoom()->ChangeRoom(new LevelMenuRoom());
+		}
+	}
+	if (alarm == 1)
+	{
+		Game::GetInstance()->GetCurrentRoom()->InstanceCreate(new FadeOutAndChangeRoom(new LevelMenuRoom));
+	}
 }
 
 void Hero::Draw()
 {
 	Font->Print(5, 5, "STEPS " + std::to_string(Steps), sf::Color::Color(224, 194, 131), 1, 1);
 	//224, 194, 131
+	if(WonGame == true)
+	{
+		Font->Print(300, 300, "Level Complete!", sf::Color::Color(224, 194, 131), 2, 2);
+	}
 	SFMLObject::Draw();
 }

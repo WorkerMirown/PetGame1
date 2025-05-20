@@ -4,22 +4,24 @@
 #include "SFMLButton.h"
 #include "Game.h"
 #include "GameLevelRoom.h"
+#include "SFMLFadeIn.h"
+#include "FadeOutAndChangeRoom.h"
 #include "MyKeyboard.h"
 
 void PlayLevel001()
 {
 	///Уровень 1
-	Game::GetInstance()->GetCurrentRoom()->ChangeRoom(new GameLevelRoom("./levels/level.txt", 1));
+	Game::GetInstance()->GetCurrentRoom()->InstanceCreate(new FadeOutAndChangeRoom(new GameLevelRoom("./levels/level.txt", 1)));
 }
 void PlayLevel002()
 {
 	///Уровень 2
-	Game::GetInstance()->GetCurrentRoom()->ChangeRoom(new GameLevelRoom("./levels/level1.txt", 2));
+	Game::GetInstance()->GetCurrentRoom()->InstanceCreate(new FadeOutAndChangeRoom(new GameLevelRoom("./levels/level1.txt", 2)));
 }
 void PlayLevel003()
 {
 	///Уровень 3
-	Game::GetInstance()->GetCurrentRoom()->ChangeRoom(new GameLevelRoom("./levels/level2.txt", 3));
+	Game::GetInstance()->GetCurrentRoom()->InstanceCreate(new FadeOutAndChangeRoom(new GameLevelRoom("./levels/level2.txt", 3)));
 }
 
 

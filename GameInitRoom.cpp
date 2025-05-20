@@ -16,6 +16,7 @@ GameInitRoom::GameInitRoom()
 	TextureManager::GetInstanse()->AddTexture("LVLMenu", "assets/menu/LVLMenu.png");
 	//Font
 	TextureManager::GetInstanse()->AddTexture("font", "assets/font/2.png");
+	TextureManager::GetInstanse()->AddTexture("1x1black", "assets/font/1x1black.png");
 
 
 	//TextureOfObject
