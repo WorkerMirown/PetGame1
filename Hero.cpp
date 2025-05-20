@@ -41,7 +41,7 @@ void Hero::Step()
 	{
 		Game::GetInstance()->GetCurrentRoom()->ChangeRoom(new MainMenuRoom());
 	}
-	if (MyKeyboard::GetInstance()->IsKeyDown(sf::Keyboard::Right) && (Alarm(0)< 0))
+	if (MyKeyboard::GetInstance()->IsKeyDown(sf::Keyboard::Right) || MyKeyboard::GetInstance()->IsKeyDown(sf::Keyboard::D) && (Alarm(0)< 0))
 	{
 		std::vector<SolidObject*> solids = GetAllGameObjectAtPosition<SolidObject *>(X()+SpriteWidth(), Y());
 		if (solids.empty() == true)
@@ -74,7 +74,7 @@ void Hero::Step()
 	}
 }
 	
-	if (MyKeyboard::GetInstance()->IsKeyDown(sf::Keyboard::Left) && (Alarm(0)< 0))
+	if (MyKeyboard::GetInstance()->IsKeyDown(sf::Keyboard::Left) || MyKeyboard::GetInstance()->IsKeyDown(sf::Keyboard::A) && (Alarm(0)< 0))
 	{
 		std::vector<SolidObject*> solids = GetAllGameObjectAtPosition<SolidObject *>( X() - SpriteWidth(), Y());
 		if (solids.empty() == true)
@@ -108,7 +108,7 @@ void Hero::Step()
 		}
 		}
 	}	
-	if (MyKeyboard::GetInstance()->IsKeyDown(sf::Keyboard::Up) && (Alarm(0) < 0))
+	if (MyKeyboard::GetInstance()->IsKeyDown(sf::Keyboard::Up) || MyKeyboard::GetInstance()->IsKeyDown(sf::Keyboard::W) && (Alarm(0) < 0))
 	{
 		std::vector<SolidObject*> solids = GetAllGameObjectAtPosition<SolidObject*>(X() , Y() - SpriteHeight());
 		if (solids.empty() == true)
@@ -144,7 +144,7 @@ void Hero::Step()
 			}
 		}
 	}
-	if (MyKeyboard::GetInstance()->IsKeyDown(sf::Keyboard::Down) && (Alarm(0) < 0))
+	if (MyKeyboard::GetInstance()->IsKeyDown(sf::Keyboard::Down) || MyKeyboard::GetInstance()->IsKeyDown(sf::Keyboard::S) && (Alarm(0) < 0))
 	{
 		std::vector<SolidObject*> solids = GetAllGameObjectAtPosition<SolidObject*>(X(), Y() + SpriteHeight());
 		if (solids.empty() == true)
@@ -205,7 +205,7 @@ void Hero::OnAlarm(int alarm)
 		WonGame |= victory;
 		if (victory == true && Alarm(1) < 0)
 		{
-			SetAlarm(1, 120);
+			SetAlarm(1, 60);
 			ScoreManager::GetInstance()->SaveScore(LevelNumber, Steps);
 
 			//Game::GetInstance()->GetCurrentRoom()->ChangeRoom(new LevelMenuRoom());
@@ -221,9 +221,10 @@ void Hero::Draw()
 {
 	Font->Print(5, 5, "STEPS " + std::to_string(Steps), sf::Color::Color(224, 194, 131), 1, 1);
 	//224, 194, 131
+	SFMLObject::Draw();
 	if(WonGame == true)
 	{
-		Font->Print(300, 300, "Level Complete!", sf::Color::Color(224, 194, 131), 2, 2);
+		Font->Print(350, 75, "Level Complete!", sf::Color::White, 3, 3);
 	}
-	SFMLObject::Draw();
+	
 }

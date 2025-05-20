@@ -13,7 +13,7 @@ void SFMLFadeIn::Step()
 	sf::Color color = GetSprite()->getColor();
 	if (color.a > 2)
 	{
-		color.a -= 2;
+		color.a -= 5;
 	}
 	else
 	{

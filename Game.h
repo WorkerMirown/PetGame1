@@ -1,7 +1,7 @@
 #pragma once
 #include <SFML/System.hpp> 
-#include <string>
 #include <SFML/Graphics.hpp>
+#include <string>
 
 class Room;
 
@@ -29,9 +29,7 @@ public:
 
 	std::string GetTitleBarText();
 	void SetTitleBarText(const std::string & text);
-
-
-
+	
 	void QuitGame();
 
 private:

@@ -14,7 +14,7 @@ FadeOutAndChangeRoom::FadeOutAndChangeRoom(Room* room)
 void FadeOutAndChangeRoom::Step()
 {
 	sf::Color color = GetSprite()->getColor();
-	color.a += 2;
+	color.a += 5;
 	if (color.a > 253)
 	{
 		Game::GetInstance()->ChangeRoom(NextRoom);

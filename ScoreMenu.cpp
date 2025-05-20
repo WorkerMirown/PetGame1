@@ -61,7 +61,7 @@ ScoreMenu::~ScoreMenu()
 }
 void ScoreMenu::Draw()
 {
-	Room::Draw(); // сначала отрисуй всех потомков
+	Room::Draw(); 
 	Font->Print(433, 177, "01", sf::Color::Color(224, 194, 131, 255), 2.175, 2.175);
 	Font->Print(563, 177, "02", sf::Color::Color(224, 194, 131, 255), 2.175, 2.175);
 	Font->Print(693, 177, "03", sf::Color::Color(224, 194, 131, 255), 2.175, 2.175);
