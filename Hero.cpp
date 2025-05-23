@@ -41,9 +41,9 @@ void Hero::Step()
 	{
 		Game::GetInstance()->GetCurrentRoom()->ChangeRoom(new MainMenuRoom());
 	}
-	if (MyKeyboard::GetInstance()->IsKeyDown(sf::Keyboard::Right) || MyKeyboard::GetInstance()->IsKeyDown(sf::Keyboard::D) && (Alarm(0)< 0))
+	if (MyKeyboard::GetInstance()->IsKeyDown(sf::Keyboard::Right) || MyKeyboard::GetInstance()->IsKeyDown(sf::Keyboard::D) && (Alarm(0) < 0))
 	{
-		std::vector<SolidObject*> solids = GetAllGameObjectAtPosition<SolidObject *>(X()+SpriteWidth(), Y());
+		std::vector<SolidObject*> solids = GetAllGameObjectAtPosition<SolidObject*>(X() + SpriteWidth(), Y());
 		if (solids.empty() == true)
 		{
 			SetImageSpeed(0.175f);
@@ -54,29 +54,29 @@ void Hero::Step()
 		}
 		else
 		{
-		std::vector<Box*> boxes = GetAllGameObjectAtPosition<Box*>(X() + SpriteWidth(), Y());
-		if (boxes.size() == 1)
-		{
-			std::vector<SolidObject*> solids = GetAllGameObjectAtPosition<SolidObject*>(X() + (SpriteWidth() << 1), Y());
-			if (solids.size() == 0)
+			std::vector<Box*> boxes = GetAllGameObjectAtPosition<Box*>(X() + SpriteWidth(), Y());
+			if (boxes.size() == 1)
 			{
-				
-				boxes[0]->SetSpeed(8);
-				boxes[0]->SetDirection(Right);
-				boxes[0]->SetAlarm(0, 8);
-				SetImageSpeed(0.175f);
-				SetSpeed(4.0f);
-				SetDirection(Right);
-				SetAlarm(0, 16);
-				GetSprite()->setTexture(*TextureManager::GetInstanse()->GetTexture("hero_right"));
+				std::vector<SolidObject*> solids = GetAllGameObjectAtPosition<SolidObject*>(X() + (SpriteWidth() << 1), Y());
+				if (solids.size() == 0)
+				{
+
+					boxes[0]->SetSpeed(8);
+					boxes[0]->SetDirection(Right);
+					boxes[0]->SetAlarm(0, 8);
+					SetImageSpeed(0.175f);
+					SetSpeed(4.0f);
+					SetDirection(Right);
+					SetAlarm(0, 16);
+					GetSprite()->setTexture(*TextureManager::GetInstanse()->GetTexture("hero_right"));
+				}
 			}
 		}
 	}
-}
-	
-	if (MyKeyboard::GetInstance()->IsKeyDown(sf::Keyboard::Left) || MyKeyboard::GetInstance()->IsKeyDown(sf::Keyboard::A) && (Alarm(0)< 0))
+
+	if (MyKeyboard::GetInstance()->IsKeyDown(sf::Keyboard::Left) || MyKeyboard::GetInstance()->IsKeyDown(sf::Keyboard::A) && (Alarm(0) < 0))
 	{
-		std::vector<SolidObject*> solids = GetAllGameObjectAtPosition<SolidObject *>( X() - SpriteWidth(), Y());
+		std::vector<SolidObject*> solids = GetAllGameObjectAtPosition<SolidObject*>(X() - SpriteWidth(), Y());
 		if (solids.empty() == true)
 		{
 			SetImageSpeed(0.175f);
@@ -87,30 +87,30 @@ void Hero::Step()
 		}
 		else
 		{
-		std::vector<Box*> boxes = GetAllGameObjectAtPosition<Box*>(X() - SpriteWidth(), Y());
-		if (boxes.size() == 1)
-		{
-			std::vector<SolidObject*> solids = GetAllGameObjectAtPosition<SolidObject*>(X() - (SpriteWidth() << 1), Y());
-			if (solids.size() == 0)
+			std::vector<Box*> boxes = GetAllGameObjectAtPosition<Box*>(X() - SpriteWidth(), Y());
+			if (boxes.size() == 1)
 			{
-				
-				SetImageSpeed(0.175f);
-				SetSpeed(8.0f);
-				SetDirection(Left);
-				SetAlarm(0, 8);
-				boxes[0]->SetSpeed(8);
-				boxes[0]->SetDirection(Left);
-				boxes[0]->SetAlarm(0, 8);
-				
-				
-				GetSprite()->setTexture(*TextureManager::GetInstanse()->GetTexture("hero_left"));
+				std::vector<SolidObject*> solids = GetAllGameObjectAtPosition<SolidObject*>(X() - (SpriteWidth() << 1), Y());
+				if (solids.size() == 0)
+				{
+
+					SetImageSpeed(0.175f);
+					SetSpeed(4.0f);
+					SetDirection(Left);
+					SetAlarm(0, 16);
+					boxes[0]->SetSpeed(8);
+					boxes[0]->SetDirection(Left);
+					boxes[0]->SetAlarm(0, 8);
+
+
+					GetSprite()->setTexture(*TextureManager::GetInstanse()->GetTexture("hero_left"));
+				}
 			}
 		}
-		}
-	}	
+	}
 	if (MyKeyboard::GetInstance()->IsKeyDown(sf::Keyboard::Up) || MyKeyboard::GetInstance()->IsKeyDown(sf::Keyboard::W) && (Alarm(0) < 0))
 	{
-		std::vector<SolidObject*> solids = GetAllGameObjectAtPosition<SolidObject*>(X() , Y() - SpriteHeight());
+		std::vector<SolidObject*> solids = GetAllGameObjectAtPosition<SolidObject*>(X(), Y() - SpriteHeight());
 		if (solids.empty() == true)
 		{
 			SetImageSpeed(0.175f);
@@ -124,14 +124,14 @@ void Hero::Step()
 			std::vector<Box*> boxes = GetAllGameObjectAtPosition<Box*>(X(), Y() - SpriteHeight());
 			if (boxes.size() == 1)
 			{
-				std::vector<SolidObject*> solids = GetAllGameObjectAtPosition<SolidObject*>(X(), Y()-(SpriteHeight()<<1));
+				std::vector<SolidObject*> solids = GetAllGameObjectAtPosition<SolidObject*>(X(), Y() - (SpriteHeight() << 1));
 				if (solids.size() == 0)
 				{
 
 					SetImageSpeed(0.175f);
-					SetSpeed(2.0f);
+					SetSpeed(4.0f);
 					SetDirection(Up);
-					SetAlarm(0, 32);
+					SetAlarm(0, 16);
 					boxes[0]->SetImageSpeed(0.175f);
 					boxes[0]->SetSpeed(8);
 					boxes[0]->SetDirection(Up);
@@ -165,9 +165,9 @@ void Hero::Step()
 				{
 
 					SetImageSpeed(0.175f);
-					SetSpeed(8.0f);
+					SetSpeed(4.0f);
 					SetDirection(Down);
-					SetAlarm(0, 8);
+					SetAlarm(0, 16);
 					boxes[0]->SetSpeed(8);
 					boxes[0]->SetDirection(Down);
 					boxes[0]->SetAlarm(0, 8);
@@ -179,7 +179,7 @@ void Hero::Step()
 			}
 		}
 	}
-	
+
 }
 
 void Hero::OnAlarm(int alarm)
@@ -219,12 +219,12 @@ void Hero::OnAlarm(int alarm)
 
 void Hero::Draw()
 {
-	Font->Print(5, 5, "STEPS " + std::to_string(Steps), sf::Color::Color(224, 194, 131), 1, 1);
+	Font->Print(5, 5, "STEPS " + std::to_string(Steps), sf::Color::Green);
 	//224, 194, 131
 	SFMLObject::Draw();
-	if(WonGame == true)
+	if (WonGame == true)
 	{
 		Font->Print(350, 75, "Level Complete!", sf::Color::White, 3, 3);
 	}
-	
+
 }

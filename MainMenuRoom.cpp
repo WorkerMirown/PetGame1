@@ -1,7 +1,6 @@
 #include "MainMenuRoom.h"
 #include "MainMenuBackground.h"
 #include "SFMLButton.h"
-#include "Game.h"
 #include "GameLevelRoom.h"
 #include "MyKeyboard.h"
 #include "LevelMenuRoom.h"
@@ -17,7 +16,7 @@ void QuitGame()
 void PlayGame()
 {
 	///Уровень 1
-	Game::GetInstance()->GetCurrentRoom()->InstanceCreate(new FadeOutAndChangeRoom(new GameLevelRoom("./levels/level.txt", 1)));
+	Game::GetInstance()->GetCurrentRoom()->InstanceCreate(new FadeOutAndChangeRoom(new GameLevelRoom("levels/level.txt", 1)));
 }
 void LevelMenu()
 {
@@ -35,9 +34,10 @@ MainMenuRoom::MainMenuRoom()
 {
 	
 	InstanceCreate(new MainMenuBackground(0,0));
+	InstanceCreate(new SFMLButton(960, 192, "ScoreBUtton", OpenScoreMenu));
 	InstanceCreate(new SFMLButton(720,512, "ExitBUtton", QuitGame)); // QUIT_Game
 	InstanceCreate(new SFMLButton(640, 320, "LvlsBUtton", LevelMenu)); // 
 	InstanceCreate(new SFMLButton(640, 128, "PlayBUtton", PlayGame));
-	InstanceCreate(new SFMLButton(960, 192, "ScoreBUtton", OpenScoreMenu));
+
 
 }

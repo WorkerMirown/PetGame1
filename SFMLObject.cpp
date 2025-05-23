@@ -2,19 +2,19 @@
 #include "Game.h"
 #include "TextureManager.h"
 
-SFMLObject::SFMLObject(float x, float y, const std::string& resource, 
-			int horizontalFrames, int verticalFrames)
-	:	Sprite(new sf::Sprite()),
-		StartPosition(x, y),
-		PreviousPosition(x, y),
-		IsVisible(true),
-		DepthLevel(0.0f),
-		Alarms(6, -1),
-		SpeedVector(0.0f, 0.0f),
-		HorizontalFrames(horizontalFrames),
-		VerticalFrames(verticalFrames),
-		Image_Index(0),
-		Image_Speed(0)
+SFMLObject::SFMLObject(float x, float y, const std::string& resource,
+	int horizontalFrames, int verticalFrames)
+	: Sprite(new sf::Sprite()),
+	StartPosition(x, y),
+	PreviousPosition(x, y),
+	IsVisible(true),
+	DepthLevel(0.0f),
+	Alarms(6, -1),
+	SpeedVector(0.0f, 0.0f),
+	HorizontalFrames(horizontalFrames),
+	VerticalFrames(verticalFrames),
+	Image_Index(0),
+	Image_Speed(0)
 {
 	if (resource != "")
 	{
@@ -35,14 +35,14 @@ void SFMLObject::Step()
 {
 	//Animateions
 	SetImageIndex(ImageIndex() + ImageSpeed());
-	
+
 
 	//Speed
 	Sprite->setPosition(Sprite->getPosition() + SpeedVector);
 
 
 	//Alarm
-	for(int i = 0; i < Alarms.size(); ++i)
+	for (int i = 0; i < Alarms.size(); ++i)
 	{
 		if (Alarms[i] >= 0)
 		{
@@ -269,10 +269,10 @@ int SFMLObject::SpriteHeight()
 bool SFMLObject::IsPointWithinSpriteBounds(float x, float y)
 {
 	if ((x >= Sprite->getPosition().x) &&
-		(x < Sprite ->getPosition().x+SpriteWidth()) &&
+		(x < Sprite->getPosition().x + SpriteWidth()) &&
 		(y >= Sprite->getPosition().y) &&
-		(y < Sprite ->getPosition().y+SpriteHeight()) 
-	)
+		(y < Sprite->getPosition().y + SpriteHeight())
+		)
 	{
 		return true;
 	}

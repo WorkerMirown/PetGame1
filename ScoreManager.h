@@ -10,9 +10,9 @@ public:
 
     void SaveScore(int level, int steps);
     std::vector<int> GetTopScores(int level);
+    std::vector<int> GetScores(int level);
     void LoadAllScores();
     void SaveAllScores();
-
 private:
     ScoreManager() = default;
 
@@ -21,3 +21,4 @@ private:
 
     static ScoreManager* Instance;
 };
+

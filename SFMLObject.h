@@ -17,8 +17,6 @@ public:
 
 	virtual void Step();
 	virtual void Draw();
-//	void setPosition(float x, float y);
-
 	sf::Sprite* GetSprite();
 
 	float X();
@@ -62,7 +60,6 @@ public:
 		Up,
 		Down
 	};
-
 	void SetDirection(Direction direction);
 	
 	float ImageIndex();
@@ -74,9 +71,6 @@ public:
 	int SpriteWidth();
 	int SpriteHeight();
 
-
-
-
 	bool IsPointWithinSpriteBounds(float x, float y);
 
 	template <typename T>
@@ -84,7 +78,6 @@ public:
 	
 	template <typename T>
 	std::vector<T> GetAllGameObjectOfType();
-
 
 private:
 	sf::Sprite*			Sprite;

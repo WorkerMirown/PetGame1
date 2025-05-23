@@ -208,6 +208,7 @@
     <Image Include="assets\MainMenuButton.png" />
     <Image Include="assets\menu\ExitBUtton.png" />
     <Image Include="assets\menu\LvlsBUtton.png" />
+    <Image Include="assets\menu\NumBUtton.png" />
     <Image Include="assets\menu\PlayBUtton.png" />
     <Image Include="assets\menu\ScoreBUtton.png" />
     <Image Include="assets\NumBUtton.png" />

@@ -3,6 +3,7 @@
 #include "MyKeyboard.h" 
 #include "Mouse.h"
 #include "GameInitRoom.h"
+#include "ScoreManager.h"
 
 Game * Game::Instance = nullptr;
 
@@ -80,6 +81,7 @@ void Game::Run()
         }
         Draw();
         PossiblyChangeRoom();
+        ScoreManager::GetInstance()->LoadAllScores();
     }
 }
 
@@ -123,7 +125,7 @@ float Game::GetFPS()
 void Game::SetFPS(float fps)
 {
     FramesPerSecond = fps;
-    TimePerFrame = sf::seconds(1.0f / FramesPerSecond);
+    TimePerFrame = sf::seconds(2.0f / FramesPerSecond);
 }
 
 void Game::SetWindowResolution(int width, int height)

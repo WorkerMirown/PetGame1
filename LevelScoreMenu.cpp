@@ -1,8 +1,9 @@
 #include "LevelScoreMenu.h"
-#include "ScoreMenu.h"
 #include "Game.h"
 #include "MyKeyboard.h"
 #include "ScoreManager.h"
+#include "ScoreMenu.h"
+
 
 LevelScoreMenu::LevelScoreMenu(int level)
     : Level(level), Font(new SFMLFont("font"))

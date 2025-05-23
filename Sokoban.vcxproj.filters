@@ -283,6 +283,9 @@
     <Image Include="assets\font\Anno_16x16.png">
       <Filter>Resource Files\Шрифт</Filter>
     </Image>
+    <Image Include="assets\menu\NumBUtton.png">
+      <Filter>Resource Files\Менюинг</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Text Include="level.txt">

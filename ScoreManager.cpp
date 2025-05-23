@@ -53,6 +53,11 @@ void ScoreManager::LoadAllScores() {
 
     file.close();
 }
+std::vector<int> ScoreManager::GetScores(int level) {
+    if (Scores.count(level))
+        return Scores[level];
+    return {}; // если нет очков — вернуть пустой вектор
+}
 
 void ScoreManager::SaveAllScores() {
     std::ofstream file(FilePath, std::ios::trunc);

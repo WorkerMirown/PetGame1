@@ -58,10 +58,6 @@ GameLevelRoom::GameLevelRoom(const std::string& filename, int levelNumber)
                 y++;
             }
         }
-        /*SFMLButton* button = new SFMLButton(0.0, 645,"ExitBUtton", ReturnToMainMenu);
-        button->SetDepth(6);
-        InstanceCreate(button);*/
-
         InstanceCreate(new SFMLFadeIn());
      file.close();
     }
